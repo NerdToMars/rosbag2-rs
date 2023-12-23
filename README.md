@@ -2,16 +2,13 @@
 
 Rosbag2 Rust is a Rust crate designed to provide functionalities for handling ROS2 bag files. This crate aims to enable efficient reading, writing, and manipulation of ROS bag files, making it easier for developers working with ROS to manage and analyze their data.
 
+[![CI][actions-badge]][actions-url]
 [![Crates.io][crates-badge]][crates-url]
-[![MIT licensed][mit-badge]][mit-url]
-[![Build Status][actions-badge]][actions-url]
-[![Discord chat][discord-badge]][discord-url]
 
 [crates-badge]: https://img.shields.io/crates/v/rosbag2-rs.svg
 [crates-url]: https://crates.io/crates/rosbag2-rs
-[mit-badge]: https://img.shields.io/badge/license-MIT-blue.svg
-[actions-badge]: https://github.com/NerdToMars/rosbag2-rs/actions/CI/badge.svg
-[actions-url]: https://github.com/NerdToMars/rosbag2-rs/actions/workflows/ci.yml?query=workflow%3ACI+branch%3Amain
+[actions-badge]: https://github.com/NerdToMars/rosbag2-rs/actions/workflows/ci.yaml/badge.svg
+[actions-url]: https://github.com/NerdToMars/rosbag2-rs/actions/workflows/ci.yaml
 
 ## Features
 
