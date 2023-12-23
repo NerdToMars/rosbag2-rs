@@ -1,6 +1,6 @@
 [package]
 name = "rosbag2-rs"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "Rosbag2 writer and more..."
 authors = ["CT <ctian.huang@gmail.com>"]
