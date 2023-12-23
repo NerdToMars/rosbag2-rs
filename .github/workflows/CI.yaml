@@ -6,15 +6,30 @@ on:
   pull_request:
     branches: [main]
 
+env:
+  RUSTFLAGS: -Dwarnings
+  RUST_BACKTRACE: 1
+  # Change to specific Rust release to pin
+  rust_stable: stable
+  rust_nightly: nightly-2023-10-21
+  rust_clippy: 1.71.0
+
+defaults:
+  run:
+    shell: bash
+
+permissions:
+  contents: read
+
 jobs:
   run-all:
     name: run all
     runs-on: ubuntu-latest
     needs:
-      - basics
-      - fmt
+      - test-full
       - clippy
       - docs
+      - fmt
     steps:
       - run: exit 0
 
@@ -24,10 +39,30 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - clippy
-      - fmt
       - docs
+      - fmt
     steps:
       - run: exit 0
+
+  fmt:
+    name: fmt
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Rust ${{ env.rust_stable }}
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: ${{ env.rust_stable }}
+          components: rustfmt
+      - uses: Swatinem/rust-cache@v2
+      # Check fmt
+      - name: "rustfmt --check"
+        # Workaround for rust-lang/cargo#7732
+        run: |
+          if ! rustfmt --check --edition 2021 $(git ls-files '*.rs'); then
+            printf "Please run \`rustfmt --edition 2021 \$(git ls-files '*.rs')\` to fix rustfmt errors.\nSee CONTRIBUTING.md for more details.\n" >&2
+            exit 1
+          fi
 
   clippy:
     name: clippy
@@ -40,8 +75,6 @@ jobs:
           toolchain: ${{ env.rust_clippy }}
           components: clippy
       - uses: Swatinem/rust-cache@v2
-      - name: cargo fmt
-        run: cargo fmt
       - name: "clippy --all"
         run: cargo clippy --all --tests --all-features --no-deps
 
