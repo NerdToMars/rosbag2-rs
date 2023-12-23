@@ -1,4 +1,4 @@
-name: Rosbag2-rs CI
+name: CI
 
 on:
   push:
@@ -99,7 +99,6 @@ jobs:
     strategy:
       matrix:
         os:
-          - windows-latest
           - ubuntu-latest
           - macos-latest
     steps:
