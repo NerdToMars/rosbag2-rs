@@ -9,6 +9,8 @@ readme = "README.md"
 homepage = "https://github.com/NerdToMars/rosbag2-rs"
 repository = "https://github.com/NerdToMars/rosbag2-rs"
 documentation = "https://github.com/NerdToMars/rosbag2-rs"
+
+exclude = [".vscode/*", ".github/*"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
