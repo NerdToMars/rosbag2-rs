@@ -6,6 +6,9 @@ description = "Rosbag2 writer and more..."
 authors = ["CT <ctian.huang@gmail.com>"]
 license = "MIT AND Apache-2.0"
 readme = "README.md"
+homepage = "https://github.com/NerdToMars/rosbag2-rs"
+repository = "https://github.com/NerdToMars/rosbag2-rs"
+documentation = "https://github.com/NerdToMars/rosbag2-rs"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]

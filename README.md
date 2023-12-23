@@ -8,7 +8,7 @@ Rosbag2 Rust is a Rust crate designed to provide functionalities for handling RO
 
 ### Current Features
 
-- [ ] Write ROS Bag Files (in progress)
+- [ ] Write ROS Bag Files (in progress, only support version 5 rosbag2 (humble))
 
 ### Planned Features
 
@@ -20,6 +20,6 @@ Rosbag2 Rust is a Rust crate designed to provide functionalities for handling RO
 
 We welcome contributions to Rosbags Rust! Whether it's reporting a bug, proposing a feature, or submitting a pull request, all contributions are appreciated.
 
-## License
+## Notice
 
-Rosbags Rust is open-source and is licensed under the MIT License.
+Most of rust code is porting from https://gitlab.com/ternaris/rosbags
