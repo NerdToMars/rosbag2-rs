@@ -15,6 +15,7 @@ Rosbag2 Rust is a Rust crate designed to provide functionalities for handling RO
 ### Current Features
 
 - [ ] Write ROS Bag Files (in progress, only support version 5 rosbag2 (humble))
+- [ ] Read ROS Bag Files
 
 ### Planned Features
 
