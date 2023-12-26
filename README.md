@@ -1,6 +1,6 @@
 # Rosbag2 Rust
 
-Rosbag2 Rust is a Rust crate designed to provide functionalities for handling ROS2 bag files. This crate aims to enable efficient reading, writing, and manipulation of ROS bag files, making it easier for developers working with ROS to manage and analyze their data.
+Rosbag2 Rust (Rosbag2 rs) is a Rust crate designed to provide functionalities for handling ROS2 bag files. This crate aims to enable efficient reading, writing, and manipulation of ROS bag files, making it easier for developers working with ROS to manage and analyze their data.
 
 [![CI][actions-badge]][actions-url]
 [![Crates.io][crates-badge]][crates-url]
@@ -14,12 +14,12 @@ Rosbag2 Rust is a Rust crate designed to provide functionalities for handling RO
 
 ### Current Features
 
-- [ ] Write ROS Bag Files (in progress, only support version 5 rosbag2 (humble))
-- [ ] Read ROS Bag Files
+- [x] Write ROS Bag Files (in progress, only support version 5 rosbag2 (humble))
+- [x] Read ROS Bag Files
 
 ### Planned Features
 
-- Read ROS Bag Files
+- Support read from split db files
 - Advanced message manipulation tools
 - ...
 

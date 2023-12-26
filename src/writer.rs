@@ -6,8 +6,7 @@ use std::collections::HashMap;
 use std::fs::File;
 use std::path::{Path, PathBuf};
 
-/// This class implements writing of rosbag2 files in version 8. It should be
-/// used as a contextmanager.
+/// This class implements writing of rosbag2 files in version 5
 pub struct Writer {
     pub path: PathBuf,
     pub metapath: PathBuf,
@@ -55,6 +54,7 @@ impl Writer {
         }
 
         std::fs::create_dir_all(&self.path)?;
+
         let conn = Connection::open(&self.dbpath)?;
 
         // TODO: add support for beyond humble ros2bag
@@ -263,5 +263,11 @@ impl Writer {
             custom_data: self.custom_data.clone(),
             ros_distro: "rosbags".to_string(),
         })
+    }
+}
+
+impl Drop for Writer {
+    fn drop(&mut self) {
+        let _ = self.close();
     }
 }

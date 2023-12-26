@@ -72,7 +72,7 @@ fn test_write_operations() -> Result<()> {
     writer.close()?;
 
     // Open the SQLite database to verify the data
-    let db_conn = Connection::open(writer.dbpath)?;
+    let db_conn = Connection::open(&writer.dbpath)?;
     let mut stmt = db_conn.prepare("SELECT data FROM messages WHERE topic_id = ?")?;
     let mut rows = stmt.query([connection.id.to_string().as_str()])?;
 
@@ -87,7 +87,7 @@ fn test_write_operations() -> Result<()> {
 
     // also check metadata.yaml
     // Read and verify the YAML metadata file
-    let metadata_contents = fs::read_to_string(writer.metapath)?;
+    let metadata_contents = fs::read_to_string(&writer.metapath)?;
     let bag_info: BagFileInfo = serde_yaml::from_str(&metadata_contents)?;
     let metadata = bag_info.rosbag2_bagfile_information;
     assert_eq!(metadata.message_count, 10);
